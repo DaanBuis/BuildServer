@@ -13,11 +13,7 @@ node {
 
         app = docker.build("daanbuis12/buildserver")
     }
-    stage('Launch Container') {
-    
-        
-        sh 'docker container run --detach --publish 80:80 --name node_application daanbuis12/buildserver:latest'
-    }
+   
    
     stage('Push image') {
         /* Finally, we'll push the image with two tags:

@@ -15,9 +15,10 @@ node {
     }
     stage('Launch and Test Container'){
    
-        sh 'docker container run --detach --publish 80:80 --name node_application daanbuis12/buildserver:latest'
+        sh 'docker container run --detach --publish 8080 --name node_application daanbuis12/buildserver:latest'
         sh 'docker ps'
     }
+    
    sshagent(['my-ssh-key']) {
     sh 'scp /Users/exampleUser/home/aws/listDProcessesNativeStacks.sh ubuntu@ip-172-31-69-105.ec2.internal:/home/ubuntu'
 }

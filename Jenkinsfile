@@ -15,7 +15,7 @@ node {
     }
     stage('Launch and Test Container'){
    
-        sh 'docker container run --detach --publish 8080 --name node_application daanbuis12/buildserver:latest'
+        sh 'docker container run --detach --publish 8080 --name nodes_application daanbuis12/buildserver:latest'
         sh 'docker ps'
     }
     

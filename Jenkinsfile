@@ -38,6 +38,6 @@ node {
     
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
       
-        sh 'ssh ubuntu@3.91.35.217 kubectl set image deployments/node-application buildserver=daanbuis12/buildserver:latest'
+        sh 'ssh ubuntu@3.91.35.217 kubectl set image deployments/buildserver buildserver=daanbuis12/buildserver:latest'
 }
 }

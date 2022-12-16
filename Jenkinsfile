@@ -13,9 +13,11 @@ node {
 
         app = docker.build("daanbuis12/buildserver")
     }
-    stage('Launch and Test Container'){
+    stage('Launch, Test, and Remove Container'){
    
         sh 'docker container run --detach --publish 8080 --name nodes_application daanbuis12/buildserver:latest'
+        sh 'docker ps'
+        sh 'docker rm --force nodes_application'
         sh 'docker ps'
     }
     

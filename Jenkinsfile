@@ -34,6 +34,6 @@ node {
  
     
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
-        sh 'ssh -A ubuntu@172.31.5.10'
+        sh 'ssh -A ubuntu@3.91.35.217'
 }
 }

@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("daanbuis12/buildserver")
+        dockerImage = docker.build("daanbuis12/buildserver:latest")
     }
     stage('Launch, Test, and Remove Container'){
    
@@ -26,10 +26,13 @@ node {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            dockerImage.push("${env.BUILD_NUMBER}")
+            dockerImage.push("latest")
         }
+
+      
+        
     }
  
     

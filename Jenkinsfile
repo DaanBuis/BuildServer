@@ -26,7 +26,7 @@ node {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        sh 'docker push daanbuis12/buildserver:tagname'
+        sh 'docker push daanbuis12/buildserver:latest'
         
     }
  

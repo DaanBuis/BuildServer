@@ -15,7 +15,7 @@ node {
     }
     stage('Launch, Test, and Remove Container'){
    
-        sh 'ssh ubuntu@3.91.35.217 docker container run --detach --publish 8080 --name node_application daanbuis12/buildserver:latest'
+        sh 'ssh ubuntu@3.91.35.217 docker container run --detach --publish 8080 --name node-application daanbuis12/buildserver:latest'
         sh 'ssh ubuntu@3.91.35.217 docker ps'
         
     }

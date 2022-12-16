@@ -31,6 +31,11 @@ node {
             app.push("latest")
         }
     }
+    stage('Update Image'){
+    
+        sh 'kubectl set image deployments/node-application node-application=daanbuis12/buildserver:latest'
+    }
+    
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
         sh 'scp /Users/exampleUser/home/aws/listDProcessesNativeStacks.sh ubuntu@ip-172-31-69-105.ec2.internal:/home/ubuntu'
 }

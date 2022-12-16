@@ -21,9 +21,7 @@ node {
         sh 'docker ps'
     }
     
-   sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
-    
-}
+
     stage('Push image') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
@@ -33,4 +31,7 @@ node {
             app.push("latest")
         }
     }
+    sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
+    
+}
 }

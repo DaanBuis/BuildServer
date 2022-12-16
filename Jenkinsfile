@@ -20,7 +20,7 @@ node {
     }
     
    sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
-    sh 'scp /Users/exampleUser/home/aws/listDProcessesNativeStacks.sh ubuntu@ip-172-31-69-105.ec2.internal:/home/ubuntu'
+    
 }
     stage('Push image') {
         /* Finally, we'll push the image with two tags:

@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        sh 'docker image build --tag daanbuis12/buildserver:1.0 .'
+      app = sh 'docker image build --tag daanbuis12/buildserver:1.0 .'
     }
     stage('Launch, Test, and Remove Container'){
    

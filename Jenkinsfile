@@ -32,6 +32,6 @@ node {
         }
     }
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
-    
+    sh 'kubectl set image deployments/node-application node-application=daanbuis12/buildserver:latest'
 }
 }

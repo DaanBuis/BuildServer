@@ -17,6 +17,7 @@ node {
    
         sh 'ssh ubuntu@3.91.35.217 docker container run --detach --publish 8080 --name node-application daanbuis12/buildserver:latest'
         sh 'ssh ubuntu@3.91.35.217 docker ps'
+        sh 'ssh ubuntu@3.91.35.217 docker rm --force node-application'
         
     }
     

@@ -38,7 +38,7 @@ node {
     
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
       
-        ssh ubuntu@184.73.13.241 "kubectl set image deployments/node-application buildserver=daanbuis12/buildserver:latest"
-        ssh ubuntu@184.73.13.241 "curl $(minikube ip):32408"
+        ssh 'ubuntu@184.73.13.241 "kubectl set image deployments/node-application buildserver=daanbuis12/buildserver:latest"'
+        ssh 'ubuntu@184.73.13.241 "curl $(minikube ip):32408"'
 }
 }

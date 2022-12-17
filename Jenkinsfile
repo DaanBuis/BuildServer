@@ -15,9 +15,9 @@ node {
     }
     stage('Launch, Test, and Remove Container'){
    
-        sh 'ssh ubuntu@3.91.35.217 docker container run --detach --publish 8080 --name node-application daanbuis12/buildserver:latest'
-        sh 'ssh ubuntu@3.91.35.217 docker ps'
-        sh 'ssh ubuntu@3.91.35.217 docker rm --force node-application'
+        sh 'ssh ubuntu@184.73.13.241 docker container run --detach --publish 8080 --name node-application daanbuis12/buildserver:latest'
+        sh 'ssh ubuntu@184.73.13.241docker ps'
+        sh 'ssh ubuntu@184.73.13.241 docker rm --force node-application'
         
     }
     
@@ -38,6 +38,7 @@ node {
     
     sshagent(credentials:["d50484ad-c382-4f63-807d-5ad4164392aa"]) {
       
-        sh 'ssh ubuntu@3.91.35.217 kubectl set image deployments/node-application buildserver=daanbuis12/buildserver:latest'
+        sh 'ssh ubuntu@184.73.13.241 kubectl set image deployments/node-application buildserver=daanbuis12/buildserver:latest'
+        sh 'ssh ubuntu@184.73.13.241 curl $(minikube ip):32408'
 }
 }
